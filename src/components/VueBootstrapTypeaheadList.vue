@@ -56,6 +56,11 @@ export default {
     minMatchingChars: {
       type: Number,
       default: 2
+    },
+    rawResult:{
+      type:Boolean,
+      required: false,
+      default: false
     }
   },
 
@@ -80,7 +85,11 @@ export default {
       if (this.query.length === 0 || this.query.length < this.minMatchingChars) {
         return []
       }
-
+      
+      if(this.rawResult){
+        return this.data();
+      }
+      
       const re = new RegExp(this.escapedQuery, 'gi')
 
       // Filter, sort, and concat
