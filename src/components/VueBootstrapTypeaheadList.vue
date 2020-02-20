@@ -87,9 +87,9 @@ export default {
       }
       
       if(this.rawResult){
-        return this.data();
+        return this.data;
       }
-      
+
       const re = new RegExp(this.escapedQuery, 'gi')
 
       // Filter, sort, and concat
