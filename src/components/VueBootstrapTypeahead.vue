@@ -13,6 +13,7 @@
         :placeholder="placeholder"
         :aria-label="placeholder"
         :value="inputValue"
+        :disabled="inputDisabled"
         @focus="isFocused = true"
         @blur="handleBlur"
         @input="handleInput($event.target.value)"
@@ -101,6 +102,11 @@ export default {
     prepend: String,
     append: String,
     rawResult: {
+      type: Boolean,
+      default: false,
+      required: false
+    },
+    inputDisabled: {
       type: Boolean,
       default: false,
       required: false
